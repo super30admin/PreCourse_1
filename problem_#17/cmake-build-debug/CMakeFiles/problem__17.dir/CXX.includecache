@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/uma/Documents/s30/problem_#17/main.cpp
+iostream
+-
+vector
+/Users/uma/Documents/s30/problem_#17/vector
+map
+/Users/uma/Documents/s30/problem_#17/map
+

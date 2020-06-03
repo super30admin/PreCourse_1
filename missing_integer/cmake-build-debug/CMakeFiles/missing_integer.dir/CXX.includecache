@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/uma/Documents/s30/missing_integer/main.cpp
+iostream
+-
+vector
+/Users/uma/Documents/s30/missing_integer/vector
+
