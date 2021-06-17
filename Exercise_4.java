@@ -1,3 +1,10 @@
+// Exercise_4 : Insert an element in a Binary Tree.
+// Time Complexity : O(N) where N is the number of nodes in the given binary tree.
+// Space Complexity : O(1) because we don’t create any space to add the node in the given binary tree.
+// Did this code successfully run on Leetcode : Ran successfully in IDE
+// Any problem you faced while coding this : Not clear
+
+
 import java.util.LinkedList; 
 import java.util.Queue; 
 public class GFG { 
@@ -33,8 +40,33 @@ public class GFG {
     static void insert(Node temp, int key) 
     { 
 
-        // Do level order traversal until we find 
-        // an empty place and add the node.  
+         if (temp == null) {
+            root = new Node(key);
+            return;
+        }
+        Queue<Node> q = new LinkedList<Node>();
+        q.add(temp);
+ 
+        // Do level order traversal until we find
+        // an empty place.
+        while (!q.isEmpty()) {
+            temp = q.peek();
+            q.remove();
+ 
+            if (temp.left == null) {
+                temp.left = new Node(key);
+                break;
+            }
+            else
+                q.add(temp.left);
+
+                 if (temp.right == null) {
+                temp.right = new Node(key);
+                break;
+            }
+            else
+                q.add(temp.right);
+        }
     } 
        
     // Driver code 
