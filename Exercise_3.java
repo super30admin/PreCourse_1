@@ -1,8 +1,10 @@
-import java.io.*; 
+import java.io.*;
+
+//import org.graalvm.compiler.graph.Node; 
   
 // Java program to implement 
 // a Singly Linked List 
-public class LinkedList { 
+class LinkedList { 
   
     Node head; // head of list 
   
@@ -18,6 +20,8 @@ public class LinkedList {
         Node(int d) 
         { 
             //Write your code here 
+            data = d;
+            next = null;
         } 
     } 
   
@@ -25,26 +29,41 @@ public class LinkedList {
     public static LinkedList insert(LinkedList list, int data) 
     { 
         // Create a new node with given data 
+        Node newNode = new Node(data);
+        newNode.next = null;
    
         // If the Linked List is empty, 
         // then make the new node as head 
-        
+        if(list.head == null){
+            list.head = newNode;
+        }     
+        else{
             // Else traverse till the last node 
             // and insert the new_node there 
-
+            Node lastNode = list.head; //start from the head
+            while(lastNode.next != null){
+                lastNode = lastNode.next;
+            }
             // Insert the new_node at last node 
+            lastNode.next = newNode;
+        }
+            
         // Return the list by head 
-        
+        return list;
     } 
   
     // Method to print the LinkedList. 
     public static void printList(LinkedList list) 
     {  
+        Node current = list.head; //start from the head node
         // Traverse through the LinkedList 
-   
+        System.out.print("Linked list: ");
+        while(current != null){
             // Print the data at current node 
-       
+            System.out.print(current.data + ", ");
             // Go to next node 
+            current = current.next;
+        }
     } 
    
     // Driver code 
