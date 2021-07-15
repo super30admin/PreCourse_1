@@ -16,8 +16,6 @@ class Stack:
             newNode.next =self.head
             self.head = newNode
         
-
-
         
     def pop(self):
         pNode = self.head

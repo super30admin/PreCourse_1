@@ -39,10 +39,6 @@ def insert(temp,key):
         else:
             s.append(temp.right)
 
-  
-    
-  
-       
 # Driver code  
 if __name__ == '__main__': 
     root = newNode(10)  

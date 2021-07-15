@@ -10,8 +10,6 @@ class myStack:
          
      def pop(self):
           return self.items.pop()
-
-        
         
      def peek(self):
           if not self.isEmpty():

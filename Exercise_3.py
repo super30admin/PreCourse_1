@@ -24,7 +24,7 @@ class SinglyLinkedList:
         if self.head == None:
             self.head = newnode
             return
-            
+
         lastnode = self.head
         while lastnode.next:
             lastnode = lastnode.next
@@ -70,7 +70,3 @@ class SinglyLinkedList:
             currentnode = currentnode.next
         previousnode.next = currentnode.next
         currentnode = None
-        
-        
-
-
