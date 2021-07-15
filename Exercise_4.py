@@ -8,12 +8,37 @@ class newNode():
           
 """ Inorder traversal of a binary tree"""
 def inorder(temp): 
-  
+  #Left->Root->Right #recurvisve method
+  if not temp:
+      return
+  if temp:
+      inorder(temp.left)
+      print(temp.key)
+      inorder(temp.right)
     
   
   
 """function to insert element in binary tree """
 def insert(temp,key): 
+    if not temp:
+        root = newNode(key)
+        return
+    s = []
+    s.append(temp)
+    while(len(s)):
+        temp = s[0]
+        s.pop(0)
+        if(not temp.left):
+            temp.left = newNode(key)
+            break
+        else:
+            s.append(temp.left)
+        if(not temp.right):
+            temp.right = newNode(key)
+            break
+        else:
+            s.append(temp.right)
+
   
     
   
