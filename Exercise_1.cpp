@@ -5,39 +5,64 @@ using namespace std;
 #define MAX 1000 
   
 class Stack { 
-    int top; 
-  
+    int top;   
 public: 
     int a[MAX]; // Maximum size of Stack 
   
-    Stack() { //Constructor here } 
+    Stack(){ //Constructor here
+      top = -1;
+      for(int i=0;i<5;i++){
+        a[i]=0;
+      }
+    } 
+    bool isEmpty();
     bool push(int x); 
     int pop(); 
-    int peek(); 
-    bool isEmpty(); 
+    int peek(int pos);  
 }; 
   
+bool Stack::isEmpty() 
+{ 
+  if(top==-1)
+    return true;
+  else
+    return false; 
+}
+
 bool Stack::push(int x) 
 { 
-    //Your code here
-    //Check Stack overflow as well
+  if(top == MAX){
+    cout<<"Stack Overflow"<<endl;
+  }
+  else{
+    top++;
+    a[top]=x;
+  } 
 } 
   
 int Stack::pop() 
 { 
-    //Your code here
-    //Check Stack Underflow as well 
-} 
-int Stack::peek() 
+  if(Stack::isEmpty()){
+    cout<<"Stack Underflow"<<endl;
+    return 0;
+  }
+  else{
+    int popval=a[top];
+    top--;
+    return popval; 
+  }
+}
+
+int Stack::peek(int pos) 
 { 
-    //Your code here
-    //Check empty condition too
-} 
-  
-bool Stack::isEmpty() 
-{ 
-    //Your code here 
-} 
+  if(Stack::isEmpty()){
+    cout<<"Stack Underflow"<<endl;
+    return 0;
+  }
+  else{
+    return a[pos]; 
+  }
+}  
   
 // Driver program to test above functions 
 int main() 
